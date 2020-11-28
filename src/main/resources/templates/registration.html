@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Create an account</title>
+
+    <link th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css} " th:rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/resources/css/common.css}" th:rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <form class="form-signin" method="POST" modelAttribute="userForm">
+        <h2 class="form-signin-heading">Create your account</h2>
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <input autofocus="true" class="form-control" path="username" placeholder="Username"
+                   type="text"></input>
+            <errors path="username"></errors>
+        </div>
+
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <input class="form-control" path="password" placeholder="Password" type="password"></input>
+            <errors path="password"></errors>
+        </div>
+
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <input class="form-control" path="passwordConfirm" placeholder="Confirm your password"
+                   type="password"></input>
+            <errors path="passwordConfirm"></errors>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
