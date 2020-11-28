@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Create an account</title>
+    <link th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css} " th:rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <form action="/logout" id="logoutForm" method="POST">
+            <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
+        </form>
+
+        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+        </h2>
+    </c:if>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
