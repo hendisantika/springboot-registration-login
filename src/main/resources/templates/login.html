@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Log in with your account</title>
+
+    <link th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css} " th:rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/resources/css/common.css}" th:rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <form action="/login" class="form-signin" method="POST">
+        <h2 class="form-heading">Log in</h2>
+
+        <div class="form-group ${error != null ? 'has-error' : ''}">
+            <span>${message}</span>
+            <input autofocus="true" class="form-control" name="username" placeholder="Username"
+                   type="text"/>
+            <input class="form-control" name="password" placeholder="Password" type="password"/>
+            <span>${error}</span>
+            <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+            <h4 class="text-center"><a href="/registration">Create an account</a></h4>
+        </div>
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+</body>
+</html>
