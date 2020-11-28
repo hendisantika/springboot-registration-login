@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  hk-mysql:
+    container_name: hendi-mysql
+    image: mysql/mysql-server
+    environment:
+      MYSQL_DATABASE: users
+      MYSQL_ROOT_PASSWORD: hendi123
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "3306:3306"
+    restart: always
+
+  registration-login:
+    build: .
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    working_dir: /app
+    ports:
+      - 8080:8080
+    command: mvn clean spring-boot:run
+    depends_on:
+      - hendi-mysql
