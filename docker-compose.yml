@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  hk-mysql:
+  hendi-mysql:
     container_name: hendi-mysql
     image: mysql/mysql-server
     environment:
