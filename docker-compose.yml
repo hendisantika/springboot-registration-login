@@ -29,4 +29,4 @@ services:
       DATABASE_USER: hendi
       DATABASE_PASSWORD: hendi123
       DATABASE_NAME: users
-      DATABASE_PORT: 3307
+      DATABASE_PORT: 3306
