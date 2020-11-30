@@ -4,3 +4,7 @@
 2. Go inside the folder: `cd springboot-registration-login`
 3. Run docker compose: `docker-compose up`
 4. Open your favorite browser: http://localhost:8080
+
+### Image Screen shot
+
+Registration Page
