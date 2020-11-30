@@ -8,3 +8,17 @@
 ### Image Screen shot
 
 Registration Page
+
+![Registration Page](img/registration.png "Registration Page")
+
+![Validation](img/validation.png "Validation")
+
+Login Page
+
+![Login Page](img/login.png "Login Page")
+
+![Login Page](img/login2.png "Login Page")
+
+Welcome Page
+
+![Welcome Page](img/welcome.png "Welcome Page")
