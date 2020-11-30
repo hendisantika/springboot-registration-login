@@ -5,7 +5,7 @@
     <title>Log in with your account</title>
 
     <link th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css} " th:rel="stylesheet"/>
-    <link rel="stylesheet" th:href="@{/resources/css/common.css}" th:rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/common.css}" th:rel="stylesheet">
 </head>
 
 <body>
@@ -15,11 +15,19 @@
         <h2 class="form-heading">Log in</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
-            <span>${message}</span>
+            <div style="color:red;margin:10px 0px;"
+                 th:if="${#request.getParameter('error') == 'true'}">
+                Login Failed!!!<br/>
+                Reason :
+                <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+                      th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                Static summary
+         </span>
+
+            </div>
             <input autofocus="true" class="form-control" name="username" placeholder="Username"
                    type="text"/>
             <input class="form-control" name="password" placeholder="Password" type="password"/>
-            <span>${error}</span>
             <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
