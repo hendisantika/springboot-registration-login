@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 services:
   hendi-mysql:
     container_name: hendi-mysql
@@ -20,7 +20,7 @@ services:
       - ~/.m2:/root/.m2
     working_dir: /app
     ports:
-      - 8080:8080
+      - "8080:8080"
     command: mvn clean spring-boot:run
     depends_on:
       - hendi-mysql
